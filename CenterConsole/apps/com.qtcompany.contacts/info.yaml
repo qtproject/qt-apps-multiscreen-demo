@@ -1,0 +1,13 @@
+formatVersion: 1
+formatType: am-application
+---
+id:      'com.qtcompany.contacts'
+icon:    'icon.png'
+code:    'Contacts.qml'
+runtime: 'qml'
+name:
+  en: 'Contacts'
+  de: 'Kontakte'
+
+categories: [ 'app', 'contacts' ]
+

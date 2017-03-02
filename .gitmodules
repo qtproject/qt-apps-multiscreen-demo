@@ -1,0 +1,3 @@
+[submodule "demo-assets"]
+	path = demo-assets
+	url = ../demo-assets.git
