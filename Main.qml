@@ -54,7 +54,7 @@ Rectangle {
     id: root
 
     property var cluster
-    property bool showClusterIfPossible: ApplicationManager.additionalConfiguration.showCluster
+    property bool showClusterIfPossible: ApplicationManager.systemProperties.showCluster
 
     Item {
         id: centerConsole

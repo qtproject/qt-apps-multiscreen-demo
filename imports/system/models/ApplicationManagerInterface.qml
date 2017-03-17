@@ -77,7 +77,7 @@ QtObject {
             acceptWindow = false
         }
         else if (isClusterWidget) {
-            if (ApplicationManager.additionalConfiguration.showCluster && (WindowManager.runningOnDesktop || ScreenManager.screenCount() > 1)) {
+            if (ApplicationManager.systemProperties.showCluster && (WindowManager.runningOnDesktop || ScreenManager.screenCount() > 1)) {
                 if (ApplicationManager.get(appID).categories[0] === "media") {
                     root.clusterWidgetReady("media", item)
                 } else if (ApplicationManager.get(appID).categories[0] === "app") {
