@@ -53,6 +53,7 @@ Item {
     }
 
     Image {
+        id: qtLogo
         z: 3
         source: Style.symbol("Built_with_Qt_RGB_logo_white")
         anchors.right: parent.right
@@ -276,7 +277,7 @@ Item {
         visible: map.mapManuallyMoved
         source: Style.symbol("CarFocusButton")
         anchors.right: parent.right
-        anchors.top: root.top
+        anchors.top: qtLogo.bottom
         anchors.margins: 20
         MouseArea {
             id: area

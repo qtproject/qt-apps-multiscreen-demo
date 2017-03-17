@@ -59,6 +59,7 @@ UIElement {
         Label {
             id: clock
             font.capitalization: Font.AllUppercase
-            text: Qt.formatDateTime(new Date(), "hh:mm")
-        }    }
+            text: ValueSource.time
+        }
+    }
 }
