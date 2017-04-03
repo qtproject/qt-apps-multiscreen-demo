@@ -4,6 +4,8 @@ TARGET = qmldatasources
 QT += qml quick sql
 CONFIG += qt plugin
 
+QMAKE_RPATHDIR += "$$INSTALL_PREFIX/long_padding/long_padding"
+
 TARGET = $$qtLibraryTarget($$TARGET)
 uri = com.pelagicore.datasource
 

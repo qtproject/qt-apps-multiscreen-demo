@@ -4,6 +4,8 @@ TARGET  = clusterscenehelperplugin
 QT += qml quick 3dcore 3dextras 3drender 3dquick 3dquick-private
 CONFIG += qt plugin c++11
 
+QMAKE_RPATHDIR += "$$INSTALL_PREFIX/long_padding/long_padding"
+
 TARGET = $$qtLibraryTarget($$TARGET)
 uri = com.qtcompany.clusterscenehelper
 

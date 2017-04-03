@@ -4,6 +4,8 @@ TARGET  = clustergaugefillerplugin
 QT += qml quick
 CONFIG += qt plugin c++11
 
+QMAKE_RPATHDIR += "$$INSTALL_PREFIX/long_padding/long_padding"
+
 TARGET = $$qtLibraryTarget($$TARGET)
 uri = com.qtcompany.clustergaugefiller
 
