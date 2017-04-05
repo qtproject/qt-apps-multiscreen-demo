@@ -51,7 +51,7 @@
             export QT_QPA_EGLFS_KMS_CONFIG=<deployed kms_config.json file from automotivedemo git>
 
             Run in desktop
-            appman.exe -r -c \qtapplicationmanager\template-opt\am\config.yaml -c am-config.yaml --dbus none Main.qml
+            appman.exe -r -c am-config.yaml --dbus none
 
             In device:
             chmod +x /opt/automotivedemo/start.sh
