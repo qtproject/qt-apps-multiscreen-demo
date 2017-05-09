@@ -97,8 +97,8 @@ QtObject {
     property url fonts: Qt.resolvedUrl('../assets/fonts/')
 
     property bool isClient: typeof ApplicationInterface !== 'undefined'
-    property string styleConfig: isClient ? ApplicationInterface.additionalConfiguration.styleConfig : ApplicationManager.systemProperties.styleConfig
-    property bool showClusterIfPossible: isClient ? ApplicationInterface.additionalConfiguration.showCluster :ApplicationManager.systemProperties.showCluster
+    property string styleConfig: isClient ? ApplicationInterface.systemProperties.styleConfig : ApplicationManager.systemProperties.styleConfig
+    property bool showClusterIfPossible: isClient ? ApplicationInterface.systemProperties.showCluster :ApplicationManager.systemProperties.showCluster
 
     property Loader styleLoader: Loader {
         property bool showClusterIfPossible: root.showClusterIfPossible

@@ -1,6 +1,6 @@
 [Unit]
 Description=AutomotiveDemo
-After=systemd-user-sessions.service
+After=systemd-user-sessions.service dbus-session.service
 
 [Service]
 ExecStart=/opt/automotivedemo/start.sh

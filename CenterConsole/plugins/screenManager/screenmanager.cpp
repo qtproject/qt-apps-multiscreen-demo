@@ -49,9 +49,13 @@ void ScreenManager::setScreen(QWindow *window, int screen)
     }
 }
 
-QList<QScreen *> ScreenManager::availableScreens() const
+QList<QObject *> ScreenManager::availableScreens() const
 {
-    return QGuiApplication::screens();
+    QList<QObject *> list;
+    for (QScreen *screen : QGuiApplication::screens())
+        list.append(screen);
+
+    return list;
 }
 
 int ScreenManager::screenCount() const

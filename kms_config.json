@@ -1,5 +1,4 @@
 {
-  "device": "drm-nvdc",
   "separateScreens": true,
   "outputs": [
     {

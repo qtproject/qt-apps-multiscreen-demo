@@ -40,7 +40,7 @@
 
 
 import QtQuick 2.1
-import QtQuick.Window 2.1
+import QtQuick.Window 2.3
 import QtApplicationManager 1.0
 import com.pelagicore.ScreenManager 1.0
 import utils 1.0
@@ -99,6 +99,7 @@ Rectangle {
             height: 720
             width: 1920
             visible: false
+            screen: Qt.application.screens[1]
 
             color: "black"
 
@@ -106,7 +107,6 @@ Rectangle {
 
             Component.onCompleted: {
                 WindowManager.registerCompositorView(cluster)
-                ScreenManager.setScreen(cluster, 1)
                 cluster.show()
             }
         }
