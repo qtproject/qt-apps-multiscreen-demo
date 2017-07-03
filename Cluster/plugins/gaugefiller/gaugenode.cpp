@@ -195,13 +195,13 @@ void GaugeNode::drawGeometryTexturePoint2D()
 
     double current_angle_rad = 0.0;
     double currentRadius = m_radius;
-    double d_arc_point_x = m_center_x + (currentRadius - m_fillWidth) * cos(m_backCutRad);
-    double d_arc_point_y = m_center_y + (currentRadius - m_fillWidth) * sin(m_backCutRad);
+    double d_arc_point_x = m_center_x + (currentRadius - m_fillWidth) * qCos(m_backCutRad);
+    double d_arc_point_y = m_center_y + (currentRadius - m_fillWidth) * qSin(m_backCutRad);
 
     vertices[0].set(d_arc_point_x, d_arc_point_y,
                     d_arc_point_x / m_width, d_arc_point_y / m_height);
-    d_arc_point_x = m_center_x + currentRadius * cos(m_backCutRad);
-    d_arc_point_y = m_center_y + currentRadius * sin(m_backCutRad);
+    d_arc_point_x = m_center_x + currentRadius * qCos(m_backCutRad);
+    d_arc_point_y = m_center_y + currentRadius * qSin(m_backCutRad);
     vertices[1].set(d_arc_point_x, d_arc_point_y,
                     d_arc_point_x / m_width, d_arc_point_y / m_height);
     d_arc_point_x = 0;
@@ -215,13 +215,13 @@ void GaugeNode::drawGeometryTexturePoint2D()
         else
             currentRadius += m_fillWidth;
 
-        d_arc_point_x = m_center_x + currentRadius * cos(current_angle_rad);
-        d_arc_point_y = m_center_y + currentRadius * sin(current_angle_rad);
+        d_arc_point_x = m_center_x + currentRadius * qCos(current_angle_rad);
+        d_arc_point_y = m_center_y + currentRadius * qSin(current_angle_rad);
         vertices[i + 2].set(d_arc_point_x, d_arc_point_y,
                             d_arc_point_x / m_width, d_arc_point_y / m_height);
     }
-    d_arc_point_x = m_center_x + (currentRadius - m_fillWidth) * cos(current_angle_rad);
-    d_arc_point_y = m_center_y + (currentRadius - m_fillWidth) * sin(current_angle_rad);
+    d_arc_point_x = m_center_x + (currentRadius - m_fillWidth) * qCos(current_angle_rad);
+    d_arc_point_y = m_center_y + (currentRadius - m_fillWidth) * qSin(current_angle_rad);
 
     vertices[m_numVertices + 2].set(d_arc_point_x, d_arc_point_y,
                                     d_arc_point_x / m_width, d_arc_point_y / m_height);
@@ -263,10 +263,10 @@ void GaugeNode::drawGeometry()
     double current_angle_rad = 0.0;
     double currentRadius = m_radius;
 
-    vertices[0].set(m_center_x + (currentRadius - m_fillWidth) * cos(m_backCutRad), m_center_y
-                    + (currentRadius - m_fillWidth) * sin(m_backCutRad));
-    vertices[1].set(m_center_x + currentRadius * cos(m_backCutRad), m_center_y
-                    + currentRadius * sin(m_backCutRad));
+    vertices[0].set(m_center_x + (currentRadius - m_fillWidth) * qCos(m_backCutRad), m_center_y
+                    + (currentRadius - m_fillWidth) * qSin(m_backCutRad));
+    vertices[1].set(m_center_x + currentRadius * qCos(m_backCutRad), m_center_y
+                    + currentRadius * qSin(m_backCutRad));
 
     for (int i = 0; i < m_numVertices; ++i) {
         current_angle_rad = m_backCutRad + i * m_arc_dist_per_vertices + m_arc_dist_per_vertices;
@@ -276,14 +276,14 @@ void GaugeNode::drawGeometry()
         else
             currentRadius += m_fillWidth;
 
-        d_arc_point_x = m_center_x + currentRadius * cos(current_angle_rad);
-        d_arc_point_y = m_center_y + currentRadius * sin(current_angle_rad);
+        d_arc_point_x = m_center_x + currentRadius * qCos(current_angle_rad);
+        d_arc_point_y = m_center_y + currentRadius * qSin(current_angle_rad);
         vertices[i + 2].set(d_arc_point_x, d_arc_point_y);
     }
 
     vertices[m_numVertices + 2].set(m_center_x + (currentRadius - m_fillWidth)
-                                    * cos(current_angle_rad), m_center_y
-                                    + (currentRadius - m_fillWidth) * sin(current_angle_rad));
+                                    * qCos(current_angle_rad), m_center_y
+                                    + (currentRadius - m_fillWidth) * qSin(current_angle_rad));
 
     markDirty(QSGNode::DirtyGeometry | QSGNode::DirtyMaterial);
 }
