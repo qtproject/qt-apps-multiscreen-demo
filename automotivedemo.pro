@@ -1,4 +1,5 @@
 include (deployment.pri)
+requires(!watchos)
 TEMPLATE = subdirs
 
 SUBDIRS = \
