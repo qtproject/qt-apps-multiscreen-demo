@@ -1,5 +1,5 @@
 include (deployment.pri)
-requires(!watchos)
+requires(!watchos:!integrity)
 TEMPLATE = subdirs
 
 SUBDIRS = \
