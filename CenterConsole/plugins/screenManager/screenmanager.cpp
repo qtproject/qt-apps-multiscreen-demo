@@ -37,7 +37,7 @@ ScreenManager::ScreenManager(QObject *parent)
     : QObject(parent)
 {
     connect(qApp, &QGuiApplication::screenAdded, this, &ScreenManager::availableScreensChanged);
-    connect(qApp, &QGuiApplication::screenAdded, this, &ScreenManager::availableScreensChanged);
+    connect(qApp, &QGuiApplication::screenRemoved, this, &ScreenManager::availableScreensChanged);
 }
 
 void ScreenManager::setScreen(QWindow *window, int screen)
